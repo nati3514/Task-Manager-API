@@ -220,6 +220,3 @@ This project follows MVC architecture principles:
 - Docker & Docker Compose
 - JSON for data exchange
 
-## License
-
-MIT License
