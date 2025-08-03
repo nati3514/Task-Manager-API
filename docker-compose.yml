@@ -1,0 +1,16 @@
+services:
+  task-manager-api:
+    build: .
+    container_name: task-manager-api
+    ports:
+      - "8080:80"
+    volumes:
+      - ./database:/var/www/html/database
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/tasks"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
